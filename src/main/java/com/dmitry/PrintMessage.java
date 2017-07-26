@@ -43,9 +43,9 @@ public class PrintMessage {
     public String sayHello() {
         logger.info("call say hello");
         //use messages
-        if (currentHour >= 5 && currentHour < 12)
+        if (currentHour >= 6 && currentHour < 9)
             return morning();
-        else if (currentHour >= 12 && currentHour < 19)
+        else if (currentHour >= 9 && currentHour < 19)
             return day();
         else if (currentHour >= 19 && currentHour < 23)
             return evening();

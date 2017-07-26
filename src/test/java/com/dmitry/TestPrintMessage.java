@@ -31,9 +31,9 @@ public class TestPrintMessage {
             //set time
             printMessage.setCurrentHour(i);
 
-            if (i >= 5 && i < 12)
+            if (i >= 6 && i < 9)
                 Assert.assertEquals(printMessage.sayHello(), resources.getString("morning"));
-            else if (i >= 12 && i < 19)
+            else if (i >= 9 && i < 19)
                 Assert.assertEquals(printMessage.sayHello(), resources.getString("day"));
             else if (i >= 19 && i < 23)
                 Assert.assertEquals(printMessage.sayHello(), resources.getString("evening"));
