@@ -27,13 +27,8 @@ public class PrintMessage {
     }
 
     public PrintMessage(Locale locale) {
+        this();
         this.locale = locale;
-        logger.info("current locale " + locale);
-        myResources = ResourceBundle.getBundle("messages/message", new UTF8Control());
-
-        Calendar currentTime = Calendar.getInstance();
-        currentHour = currentTime.get(Calendar.HOUR_OF_DAY);
-        logger.info("current hour- " + currentHour);
     }
 
     /**
