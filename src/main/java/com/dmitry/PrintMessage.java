@@ -19,16 +19,25 @@ public class PrintMessage {
     public PrintMessage() {
         locale = Locale.getDefault();
         logger.info("current locale " + locale);
-        myResources = ResourceBundle.getBundle("messages/message", new UTF8Control());
-
+        setLocale(locale);
         Calendar currentTime = Calendar.getInstance();
         currentHour = currentTime.get(Calendar.HOUR_OF_DAY);
         logger.info("current currentHour- " + currentHour);
     }
 
-    public PrintMessage(Locale locale) {
-        this();
-        this.locale = locale;
+    /**
+     * If the current computer locale is not supported, set local "EN"
+     * @param locale set new locale
+     */
+    public void setLocale(Locale locale) {
+        if(!locale.getLanguage().equals("en") && !locale.getLanguage().equals("ru")){
+            this.locale = new Locale("en", "US");
+        }
+        else {
+            this.locale = locale;
+        }
+        logger.info("set locale " + locale);
+        myResources = ResourceBundle.getBundle("messages/message", this.locale, new UTF8Control());
     }
 
     /**
