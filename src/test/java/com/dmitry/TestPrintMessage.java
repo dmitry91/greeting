@@ -24,9 +24,9 @@ public class TestPrintMessage {
      * @param locale - set locale 'RU' or 'EN' for testing
      */
     private void testMessage(Locale locale){
-        Locale.setDefault(locale);
-        PrintMessage printMessage = new PrintMessage(locale);
-        ResourceBundle resources = ResourceBundle.getBundle("messages/message", new UTF8Control());
+        PrintMessage printMessage = new PrintMessage();
+        printMessage.setLocale(locale);
+        ResourceBundle resources = ResourceBundle.getBundle("messages/message", locale);
         for (int i = 0; i < 24; i++) {
             //set time
             printMessage.setCurrentHour(i);
