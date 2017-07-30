@@ -30,10 +30,9 @@ public class PrintMessage {
      * @param locale set new locale
      */
     public void setLocale(Locale locale) {
-        if(!locale.getLanguage().equals("en") && !locale.getLanguage().equals("ru")){
+        if (!locale.getLanguage().equals("en") && !locale.getLanguage().equals("ru")) {
             this.locale = new Locale("en", "US");
-        }
-        else {
+        } else {
             this.locale = locale;
         }
         logger.info("set locale " + locale);
